@@ -1,0 +1,18 @@
+.back-to-top {
+  position: fixed;
+  right: 10px;
+  bottom: 5px;
+  display: inline-flex;
+  align-items: center;
+  background: #908a7a;
+  padding: 15px;
+  border-radius: 6px;
+
+  &:hover .back-to-top__icon {
+    translate: 0 -4px;
+  }
+
+  &__icon {
+    transition: all 0.2s ease-out;
+  }
+}

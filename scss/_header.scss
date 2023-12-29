@@ -32,7 +32,7 @@
     width: 20px;
 
     @include mixin.screen(sm) {
-      width: 15px;
+      width: 18px;
     }
   }
 }
@@ -167,8 +167,8 @@
     background: #171100;
 
     @include mixin.screen(sm) {
-      min-width: 100px;
-      height: 45px;
+      min-width: 82px;
+      height: 30px;
       padding: 0 15px;
     }
   }
