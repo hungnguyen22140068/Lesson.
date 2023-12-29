@@ -1,0 +1,19 @@
+$grid-screens: (
+  xxl: 1400px,
+  xl: 1200px,
+  lg: 992px,
+  md: 768px,
+  sm: 576px,
+);
+
+@mixin screen($key) {
+  $screen: map-get($grid-screens, $key);
+  @if ($screen) {
+    // Cú pháp cho PC First
+    @media (max-width: ($screen - 0.02)) {
+      @content;
+    }
+  } @else {
+    @error "The value #{$key} is not in screens list.";
+  }
+}

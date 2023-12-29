@@ -1,0 +1,123 @@
+@use "./mixin";
+
+.testimorial {
+  margin: 100px 0;
+  padding: 96px 0;
+  background: #2e2100;
+
+  @include mixin.screen(lg) {
+    padding: 60px 0;
+  }
+
+  @include mixin.screen(md) {
+    margin: 50px 0;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-shrink: 0;
+    gap: 40px 241px;
+
+    @include mixin.screen(xl) {
+      gap: 40px 113px;
+    }
+
+    @include mixin.screen(lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    flex-shrink: 0;
+
+    @include mixin.screen(lg) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-family: Sen;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-top: 18px;
+    line-height: 141.667%;
+    color: #f7f7f7;
+  }
+
+  &__desc {
+    color: #bfbcb2;
+    margin-top: 4px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 185.714%;
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    gap: 0 6px;
+    margin-top: 28px;
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #634700;
+    cursor: pointer;
+  }
+
+  &__active {
+    background: #ffb900;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 28px;
+    object-fit: cover;
+
+    @include mixin.screen(sm) {
+      width: 23px;
+      height: 20px;
+    }
+  }
+
+  &__text {
+    color: #fff;
+    margin-left: 30px;
+    font-size: 2.6rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 153.846%;
+
+    @include mixin.screen(lg) {
+      font-size: 2.4rem;
+    }
+
+    @include mixin.screen(md) {
+      font-size: 1.8rem;
+    }
+
+    @include mixin.screen(sm) {
+      font-size: 1.4rem;
+      margin-left: 0;
+    }
+  }
+}

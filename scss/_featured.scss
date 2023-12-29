@@ -1,0 +1,144 @@
+@use "./mixin";
+
+.featured {
+  padding: 100px 0;
+
+  @include mixin.screen(md) {
+    padding: 50px 0;
+  }
+
+  &__inner-top {
+    display: flex;
+    align-items: center;
+
+    @include mixin.screen(md) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__inner-bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 200px;
+
+    @include mixin.screen(md) {
+      margin-top: 100px;
+    }
+  }
+
+  &__media-top {
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+  }
+
+  &__top-img {
+    width: 270px;
+    height: 404px;
+    border-radius: 16px;
+    object-fit: cover;
+
+    @include mixin.screen(xl) {
+      width: 100%;
+    }
+
+    @include mixin.screen(sm) {
+      height: 280px;
+    }
+    &-1 {
+      margin-top: 34px;
+
+      @include mixin.screen(xl) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__bottom-img {
+    width: 470px;
+    height: 440px;
+    border-radius: 16px;
+    object-fit: cover;
+
+    @include mixin.screen(xl) {
+      width: 100%;
+    }
+
+    @include mixin.screen(sm) {
+      height: 280px;
+    }
+  }
+
+  &__content-top {
+    padding-left: 4px;
+
+    @include mixin.screen(md) {
+      padding-left: 15px;
+    }
+
+    @include mixin.screen(md) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__content-bottom {
+    padding-right: 4px;
+
+    @include mixin.screen(md) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-right: 15px;
+    }
+  }
+
+  &__heading {
+    @include mixin.screen(xl) {
+      font-size: 3.5rem;
+    }
+
+    @include mixin.screen(lg) {
+      font-size: 3.3rem;
+    }
+
+    @include mixin.screen(md) {
+      text-align: center;
+    }
+
+    @include mixin.screen(sm) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__bottom-heading {
+    @include mixin.screen(lg) {
+      font-size: 2.7rem;
+    }
+  }
+
+  &__desc {
+    padding-right: 10px;
+    margin: 16px 0;
+
+    @include mixin.screen(md) {
+      text-align: center;
+
+      @include mixin.screen(sm) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  &__caption {
+    @include mixin.screen(sm) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__btn {
+    margin-top: 32px;
+    min-width: 137px;
+  }
+}

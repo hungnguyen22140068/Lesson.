@@ -1,0 +1,156 @@
+@use "./mixin";
+
+.blog {
+  margin-top: 100px 0;
+  padding: 96px 0;
+  background: #fffcf4;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px 0;
+    margin-bottom: 55px;
+  }
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__desc {
+    width: 38%;
+    text-align: center;
+
+    @include mixin.screen(md) {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    height: 100%;
+    border-radius: 16px;
+    background: #fff;
+    transition: all 0.5s linear;
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    &:hover .blog__img {
+      scale: 1.1;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 370px;
+    height: 250px;
+    overflow: hidden;
+
+    @include mixin.screen(md) {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px 16px 0px 0px;
+    transition: scale 0.5s ease;
+    object-fit: cover;
+  }
+
+  &__info {
+    padding: 20px 20px 28px;
+
+    @include mixin.screen(md) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__line {
+    display: flex;
+    align-items: center;
+    gap: 0 7px;
+
+    &-dot {
+      width: 6px;
+      height: 6px;
+      flex-shrink: 0;
+      background-color: #ffb900;
+      border-radius: 50%;
+    }
+  }
+
+  &__date {
+    position: relative;
+    color: #5f5b53;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 185.714%;
+
+    @include mixin.screen(md) {
+      text-align: center;
+    }
+  }
+
+  &__separate {
+    width: 160px;
+    height: 1px;
+    flex-shrink: 0;
+    border-radius: 0.5px;
+    margin: 12px 0;
+    background: #e2dfda;
+
+    @include mixin.screen(md) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    display: block;
+    color: #171100;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 175%;
+    margin-bottom: 12px;
+
+    @include mixin.screen(md) {
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    padding: 0 21px;
+    background: #171100;
+    transition: background 0.5s linear;
+
+    &:hover {
+      background: #ffb900;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 38px;
+    gap: 0 6px;
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #5f5b53;
+    cursor: pointer;
+
+    &--active {
+      background: #ffb900;
+    }
+  }
+}

@@ -1,0 +1,175 @@
+@use "./mixin";
+
+.header {
+  padding: 36px 0 32px;
+  background: #fffcf4;
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+  }
+
+  @include mixin.screen(sm) {
+    padding: 20px 0;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include mixin.screen(lg) {
+      justify-content: space-between;
+    }
+  }
+}
+
+.more {
+  &__icon {
+    width: 20px;
+
+    @include mixin.screen(sm) {
+      width: 15px;
+    }
+  }
+}
+
+.navbar {
+  margin-left: auto;
+
+  @include mixin.screen(lg) {
+    position: fixed;
+    inset: 0 50% 0 0;
+    height: auto;
+    padding: 30px 30px 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: #fff;
+    translate: -100%;
+    transition: translate 0.5s linear;
+    z-index: 99;
+  }
+
+  @include mixin.screen(sm) {
+    inset: 0 20% 0 0;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    @include mixin.screen(lg) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+  }
+
+  &__active &__link {
+    font-weight: 600;
+    color: #171100;
+  }
+
+  &__active &__link::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__item {
+    @include mixin.screen(lg) {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 5px 21px;
+    line-height: 175%;
+    color: #5f5b53;
+    transition: all 0.5s ease;
+
+    &:hover {
+      font-weight: 600;
+      color: #171100;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &::before {
+      content: attr(title);
+      display: block;
+      font-weight: 600;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 2px;
+      border-radius: 1px;
+      background: #171100;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+    }
+
+    @include mixin.screen(lg) {
+      width: 100%;
+      padding: 14px 0;
+    }
+  }
+
+  &__overlay {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity, visibility;
+    transition-duration: 0.5s;
+
+    @include mixin.screen(lg) {
+      position: fixed;
+      inset: 0;
+      background: rgba($color: #000000, $alpha: 0.4);
+      z-index: 98;
+    }
+  }
+
+  &__checkbox:checked ~ &__overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__checkbox:checked ~ .navbar {
+    translate: 0;
+  }
+}
+
+.act {
+  margin-left: 49px;
+
+  @include mixin.screen(lg) {
+    margin-left: 0;
+  }
+
+  &__btn {
+    min-width: 144px;
+    border-radius: 24.5px;
+    background: #171100;
+
+    @include mixin.screen(sm) {
+      min-width: 100px;
+      height: 45px;
+      padding: 0 15px;
+    }
+  }
+}

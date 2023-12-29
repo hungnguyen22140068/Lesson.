@@ -1,0 +1,14 @@
+.logo {
+  &__text,
+  &__dot {
+    font-family: Sen;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 141.667%;
+    color: #171100;
+  }
+
+  &__dot {
+    color: #ffb900;
+  }
+}

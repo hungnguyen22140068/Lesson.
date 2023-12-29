@@ -1,0 +1,19 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 118px;
+  height: 50px;
+  padding: 0 24px;
+  border-radius: 25px;
+  background: #ffb900;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 185.714%;
+  transition: opacity 0.5s linear;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
